@@ -27,12 +27,12 @@
 
         <form method=post>
             {{ form.csrf_token }}
-            <div class="row d-flex justify-content-center m-4">
-                {% if form_type == 'start' %}
-                    <div class="row">
-                        {{ render_field(form.submit, class="btn btn-primary btn-lg btn-block") }}
-                    </div>
-                {% elif form_type == 'gender' %}
+            {% if form_type == 'start' %}
+                <div class="row d-flex justify-content-center m-4">
+                    {{ render_field(form.submit, class="btn btn-primary btn-lg btn-block") }}
+                </div>
+            {% elif form_type == 'gender' %}
+                <div class="row d-flex justify-content-center m-4">
                     <div class="col-sm-4"></div>
                     <div class="col-sm-2">
                         {{ render_field(form.male, class="btn btn-primary btn-lg btn-block") }}
@@ -42,16 +42,86 @@
                         {{ render_field(form.female, class="btn btn-primary btn-lg btn-block") }}
                     </div>
                     <div class="col-sm-4"></div>
-                {% elif form_type == 'age' %}
-                    <div class="row">
-                        {{ render_field(form.age) }}
+                </div>
+            {% elif form_type == 'business' %}
+                <div class="row d-flex justify-content-center m-4">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-2">
+                        {{ render_field(form.yes, class="btn btn-primary btn-lg btn-block") }}
                     </div>
-                {% elif form_type == 'occupation' %}
-                    {{ render_field(form.occupation) }}
-                {% elif form.marriage is defined %}
-                    {{ render_field(form.marriage) }}
-                {% endif %}
-            </div>
+
+                    <div class="col-sm-2">
+                        {{ render_field(form.no, class="btn btn-primary btn-lg btn-block") }}
+                    </div>
+                    <div class="col-sm-4"></div>
+                </div>
+            {% elif form_type == 'family' %}
+                <div class="row d-flex justify-content-center m-4">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-4">
+                        {{ render_field(form.single_only, class="btn btn-primary btn-lg btn-block") }}
+                    </div>
+                    <div class="col-sm-4">
+                        {{ render_field(form.single_with, class="btn btn-primary btn-lg btn-block") }}
+                    </div>
+                    <div class="col-sm-2"></div>
+                </div>
+                <div class="row d-flex justify-content-center m-4">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-4">
+                        {{ render_field(form.couple_only, class="btn btn-primary btn-lg btn-block") }}
+                    </div>
+                    <div class="col-sm-4">
+                        {{ render_field(form.couple_with, class="btn btn-primary btn-lg btn-block") }}
+                    </div>
+                    <div class="col-sm-2"></div>
+                </div>
+            {% elif form_type == 'state' %}
+                <div class="row d-flex justify-content-center m-4">
+                    <div class="col-sm-4">
+                        {{ render_field(form.act, class="btn btn-primary btn-lg btn-block") }}
+                    </div>
+                    <div class="col-sm-4">
+                        {{ render_field(form.nsw, class="btn btn-primary btn-lg btn-block") }}
+                    </div>
+                    <div class="col-sm-4">
+                        {{ render_field(form.nt, class="btn btn-primary btn-lg btn-block") }}
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center m-4">
+                    <div class="col-sm-4">
+                        {{ render_field(form.qld, class="btn btn-primary btn-lg btn-block") }}
+                    </div>
+                    <div class="col-sm-4">
+                        {{ render_field(form.sa, class="btn btn-primary btn-lg btn-block") }}
+                    </div>
+                    <div class="col-sm-4">
+                        {{ render_field(form.tas, class="btn btn-primary btn-lg btn-block") }}
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center m-4">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-4">
+                        {{ render_field(form.vic, class="btn btn-primary btn-lg btn-block") }}
+                    </div>
+                    <div class="col-sm-4">
+                        {{ render_field(form.wa, class="btn btn-primary btn-lg btn-block") }}
+                    </div>
+                    <div class="col-sm-2"></div>
+                </div>
+            {% elif form_type == 'income' %}
+                <div class="row d-flex justify-content-center m-4">
+                    {{ render_field(form.income) }}
+                </div>
+            {% elif form_type == 'debt' %}
+                <div class="row d-flex justify-content-center m-4">
+                    {{ render_field(form.debt) }}
+                </div>
+            {% elif form_type == 'asset' %}
+                <div class="row d-flex justify-content-center m-4">
+                    {{ render_field(form.asset) }}
+                </div>
+            {% endif %}
         </form>
 
         {% if percent is not none %}
