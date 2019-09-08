@@ -1,0 +1,38 @@
+* {
+    font-family: Helvetica, Times, serif;
+}
+
+h1 {
+    font-weight: bold;
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+
+p {
+    font-size: 25px;
+    color: white
+}
+
+.jumbotron {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url('/static/img/background.jpg');
+    height: 100%;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-filter: brightness(100%);
+    /*background-size: cover;*/
+    /*filter: brightness(50%);*/
+    /*opacity: 0.5;*/
+}
+
+.vertical-center {
+    min-height: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+}

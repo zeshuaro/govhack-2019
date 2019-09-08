@@ -1,0 +1,55 @@
+{% from "_formhelpers.html" import render_field %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+<body>
+    <div class="jumbotron vertical-center">
+    <div class="container">
+        <div class="row d-flex justify-content-center m-4">
+            {% if is_more %}
+                <h1>You are {{ percent }}% more likely to become bankrupt than the average person</h1>
+            {% else %}
+                <h1>You are {{ percent }}% less likely to become bankrupt than the average person</h1>
+            {% endif %}
+            <p style="color: lightgrey; font-size: 20px">But don't worry, the chance of an average person becoming bankrupt is 0.15%, use this number comparatively</p>
+        </div>
+
+        <div class="row d-flex justify-content-center m-4">
+            <p>Most people with your profile become bankrupt because of the following reason</p>
+            <h2>{{ text }}</h2>
+        </div>
+
+        <div class="row d-flex justify-content-center m-4">
+            <p>For additional resources, please visit <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.afsa.gov.au%2Finsolvency%2Fcant-pay-my-debts%2Fwhere-find-help%3Ffbclid%3DIwAR2feYvzhtgDZjEj82WmxPiNQs7wHBY0JY_wl74IdQLm4v2lxKQbAjDAIE4&h=AT1FzyiAdIwYyXpruCKpO4GIYzF2MDE9ttPPBQ5674qoFTE5uBjGnn2_-xF7zdLH1yAUvCeM7P_x1HtSOd3vHTb3UXonYyf4P0gorJDNqx8T0e7aPM_i63fmy-2QFu168obteM7TNLs" style="color: white; text-decoration: underline" target="_blank">Can't pay my debts</a></p>
+        </div>
+    </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</body>
+</html>

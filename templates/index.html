@@ -7,6 +7,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -16,30 +18,31 @@
     <title>Hello, world!</title>
 </head>
 <body>
+    <div class="jumbotron vertical-center">
     <div class="container">
-        <div class="row d-flex justify-content-center">
-            <h1>Bankrupt Check</h1>
+        <div class="row d-flex justify-content-center m-4">
+            <h1>How likely are you to be bankrupt?</h1>
         </div>
 
         <div class="row d-flex justify-content-center m-4">
-            {{ text }}
+            <p>{{ text }}</p>
         </div>
 
         <form method=post>
             {{ form.csrf_token }}
             {% if form_type == 'start' %}
-                <div class="row d-flex justify-content-center m-4">
-                    {{ render_field(form.submit, class="btn btn-primary btn-lg btn-block") }}
+                <div class="row d-flex justify-content-center">
+                    {{ render_field(form.submit, class="btn btn-light btn-lg btn-block") }}
                 </div>
             {% elif form_type == 'gender' %}
                 <div class="row d-flex justify-content-center m-4">
                     <div class="col-sm-4"></div>
                     <div class="col-sm-2">
-                        {{ render_field(form.male, class="btn btn-primary btn-lg btn-block") }}
+                        {{ render_field(form.male, class="btn btn-light btn-lg btn-block") }}
                     </div>
 
                     <div class="col-sm-2">
-                        {{ render_field(form.female, class="btn btn-primary btn-lg btn-block") }}
+                        {{ render_field(form.female, class="btn btn-light btn-lg btn-block") }}
                     </div>
                     <div class="col-sm-4"></div>
                 </div>
@@ -47,11 +50,11 @@
                 <div class="row d-flex justify-content-center m-4">
                     <div class="col-sm-4"></div>
                     <div class="col-sm-2">
-                        {{ render_field(form.yes, class="btn btn-primary btn-lg btn-block") }}
+                        {{ render_field(form.yes, class="btn btn-light btn-lg btn-block") }}
                     </div>
 
                     <div class="col-sm-2">
-                        {{ render_field(form.no, class="btn btn-primary btn-lg btn-block") }}
+                        {{ render_field(form.no, class="btn btn-light btn-lg btn-block") }}
                     </div>
                     <div class="col-sm-4"></div>
                 </div>
@@ -59,53 +62,53 @@
                 <div class="row d-flex justify-content-center m-4">
                     <div class="col-sm-2"></div>
                     <div class="col-sm-4">
-                        {{ render_field(form.single_only, class="btn btn-primary btn-lg btn-block") }}
+                        {{ render_field(form.single_only, class="btn btn-light btn-lg btn-block") }}
                     </div>
                     <div class="col-sm-4">
-                        {{ render_field(form.single_with, class="btn btn-primary btn-lg btn-block") }}
+                        {{ render_field(form.single_with, class="btn btn-light btn-lg btn-block") }}
                     </div>
                     <div class="col-sm-2"></div>
                 </div>
                 <div class="row d-flex justify-content-center m-4">
                     <div class="col-sm-2"></div>
                     <div class="col-sm-4">
-                        {{ render_field(form.couple_only, class="btn btn-primary btn-lg btn-block") }}
+                        {{ render_field(form.couple_only, class="btn btn-light btn-lg btn-block") }}
                     </div>
                     <div class="col-sm-4">
-                        {{ render_field(form.couple_with, class="btn btn-primary btn-lg btn-block") }}
+                        {{ render_field(form.couple_with, class="btn btn-light btn-lg btn-block") }}
                     </div>
                     <div class="col-sm-2"></div>
                 </div>
             {% elif form_type == 'state' %}
                 <div class="row d-flex justify-content-center m-4">
                     <div class="col-sm-4">
-                        {{ render_field(form.act, class="btn btn-primary btn-lg btn-block") }}
+                        {{ render_field(form.act, class="btn btn-light btn-lg btn-block") }}
                     </div>
                     <div class="col-sm-4">
-                        {{ render_field(form.nsw, class="btn btn-primary btn-lg btn-block") }}
+                        {{ render_field(form.nsw, class="btn btn-light btn-lg btn-block") }}
                     </div>
                     <div class="col-sm-4">
-                        {{ render_field(form.nt, class="btn btn-primary btn-lg btn-block") }}
+                        {{ render_field(form.nt, class="btn btn-light btn-lg btn-block") }}
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center m-4">
                     <div class="col-sm-4">
-                        {{ render_field(form.qld, class="btn btn-primary btn-lg btn-block") }}
+                        {{ render_field(form.qld, class="btn btn-light btn-lg btn-block") }}
                     </div>
                     <div class="col-sm-4">
-                        {{ render_field(form.sa, class="btn btn-primary btn-lg btn-block") }}
+                        {{ render_field(form.sa, class="btn btn-light btn-lg btn-block") }}
                     </div>
                     <div class="col-sm-4">
-                        {{ render_field(form.tas, class="btn btn-primary btn-lg btn-block") }}
+                        {{ render_field(form.tas, class="btn btn-light btn-lg btn-block") }}
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center m-4">
                     <div class="col-sm-2"></div>
                     <div class="col-sm-4">
-                        {{ render_field(form.vic, class="btn btn-primary btn-lg btn-block") }}
+                        {{ render_field(form.vic, class="btn btn-light btn-lg btn-block") }}
                     </div>
                     <div class="col-sm-4">
-                        {{ render_field(form.wa, class="btn btn-primary btn-lg btn-block") }}
+                        {{ render_field(form.wa, class="btn btn-light btn-lg btn-block") }}
                     </div>
                     <div class="col-sm-2"></div>
                 </div>
@@ -143,6 +146,7 @@
                 {% endif %}
             </div>
         {% endif %}
+    </div>
     </div>
 
     <!-- Optional JavaScript -->
